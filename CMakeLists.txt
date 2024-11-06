@@ -13,8 +13,15 @@ add_executable(oled
 oled.c
 )
 
+target_sources(oled PRIVATE
+	oled.c
+	ssd1306_i2c.h
+		ssd1306_font.h
+)
+
 target_link_libraries(oled
 	pico_stdlib
 	hardware_i2c
 	)
+
 pico_add_extra_outputs(oled)
